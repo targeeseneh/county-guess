@@ -214,21 +214,29 @@ function displayFeedback(text, emoji, textColor) {
 
     // Create a <div> element for the feedback message
     const feedbackDiv = document.createElement('div');
+
+	//set the diplay style of the div to
     feedbackDiv.style.display = 'inline-block';
+
+	//set the color of the text
     feedbackDiv.style.color = textColor;
 
     // Create a <span> element for the emoji
     const emojiSpan = document.createElement('span');
+
+	//set the emoji font size
     emojiSpan.style.fontSize = '2rem';
+
+	//set the emoji like text  
     emojiSpan.textContent = emoji;
 
-    // Set the text content of the feedback message
+    // set the text content of the feedback message 
     feedbackDiv.textContent = text;
 
-    // Append the emoji span to the feedback message div
+    // append the emoji span to the feedback message div
     feedbackDiv.appendChild(emojiSpan);
 
-    // Append the feedback message div to the 'feedback' element
+    // append the feedback message div to the 'feedback' element
     feedback.appendChild(feedbackDiv);
 }
 
@@ -236,7 +244,11 @@ function displayFeedback(text, emoji, textColor) {
 
 // Function to restart the game
 function restartGame() {
+
+	
 	const feedback = document.getElementById('feedback');
+
+	//clear the content inside the feedback element
     feedback.innerHTML = '';
 
     score = 0;
@@ -245,8 +257,14 @@ function restartGame() {
     startGame();
 }
 
+
+//add an eventListenre to ensures that the JavaScript code doesn't run until the HTML structure is ready.
 document.addEventListener('DOMContentLoaded', function () {
+	
+	//add an event listener to the start button
 document.getElementById('startBtn').addEventListener('click', startGame);
+
+	//add an event lisener to the restart button
 document.getElementById('restartBtn').addEventListener('click', restartGame);
 });
 
